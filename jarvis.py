@@ -37,7 +37,7 @@ def listen_for_command():
     samplerate = 16000
     duration = 5
 
-    print("J.A.R.V.I.S is at your service...")
+    print("J.A.R.V.I.S. is at your service...")
     recording = sd.rec(int(duration * samplerate), samplerate=samplerate, channels=1, dtype='int16')
     sd.wait()
 

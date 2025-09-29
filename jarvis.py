@@ -52,8 +52,6 @@ def listen_for_command():
         return None
 
 def perform_command(command):
-    global tasks
-    global listeningToTask
     global askingAQuestion
     global should_run
     global listening_for_trigger_word

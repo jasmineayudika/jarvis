@@ -20,8 +20,6 @@ if sys.platform != 'darwin':
     import pyttsx3
     engine = pyttsx3.init() 
 
-tasks = []
-listeningToTask = False
 askingAQuestion = False
 
 def respond(text):

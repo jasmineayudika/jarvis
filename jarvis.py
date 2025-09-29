@@ -92,7 +92,7 @@ def perform_command(command):
         elif "exit" in command:
             should_run = False
         else:
-            respond("Sorry, I'm not sure how to handle that command.")
+            respond("Sorry, sir, I am not sure how to handle that command.")
     listening_for_trigger_word = True
 
 def main():

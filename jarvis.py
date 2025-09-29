@@ -12,7 +12,6 @@ import soundfile as sf
 model_path = os.path.expanduser("~/Library/Application Support/nomic.ai/GPT4All/Chocolatine-3B-Instruct-DPO-Revised-Q4_0.gguf")
 model = GPT4All(model_path, allow_download=False)
 assistant_name = "jarvis"
-listening_for_trigger_word = True
 should_run = True
 base_model = whisper.load_model("tiny")
 
@@ -54,7 +53,6 @@ def listen_for_command():
 def perform_command(command):
     global askingAQuestion
     global should_run
-    global listening_for_trigger_word
     if command:
         print("Command: ", command)
         if "open instagram" in command:
@@ -89,16 +87,11 @@ def perform_command(command):
             should_run = False
         else:
             respond("Sorry, sir, I am not sure how to handle that command.")
-    listening_for_trigger_word = True
 
 def main():
-    global listening_for_trigger_word
     while should_run:
         command = listen_for_command()
-        if listening_for_trigger_word:
-            listening_for_trigger_word = False
-        else:
-            perform_command(command)
+        perform_command(command)
         time.sleep(1)
     respond("It was a great pleasure assisting you, sir.")
 
